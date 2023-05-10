@@ -14,32 +14,32 @@ export type State = {
     job: Task,
     jobs: Task[] ,
 }
-export interface setTodo1 {
+export interface setTodoInterface {
     type: 'SET';
     payload: string;
 }
 
-export interface updateTodo1 {
+export interface updateTodoInterface {
     type: 'UPDATE';
     payload: Task;
 }
 
-export interface deleteTodo1 {
+export interface deleteTodoInterface {
     type: 'DELETE';
     payload: number;
 }
-export interface setJob1 {
+export interface setJobInterface {
     type: 'SET_JOBS';
     payload: Task[];
 }
-export interface completeJob1 {
+export interface completeJobInterface {
     type: 'COMPLETE_JOB';
     payload: {
         id: string,
         complete: boolean,
     };
 }
-export interface editJob1 {
+export interface editJobInterface {
     type: 'EDIT_JOB';
     payload: {
         id: string,

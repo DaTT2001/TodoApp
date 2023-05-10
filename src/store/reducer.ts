@@ -34,7 +34,6 @@ export function reducer(state: State, action: Action): State {
             }
         case  'DELETE': 
             const newJobs: Task[]= [...state.jobs]
-            // xoa theo index
             newJobs.splice(action.payload, 1)
             return {
                 ...state,

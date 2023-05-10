@@ -1,7 +1,7 @@
 import { Task } from '../store/types'
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3006/todos';
+const API_URL = 'https://new-api-sandy.vercel.app/todos';
 
 // get dữ liệu ban đầu
 export async function getTodos(): Promise<Task[]> {

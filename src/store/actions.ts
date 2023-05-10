@@ -1,5 +1,4 @@
-import { Task } from './types';
-import { setTodo1, updateTodo1, deleteTodo1, setJob1, completeJob1 } from './types';
+import { setTodo1, updateTodo1, deleteTodo1, setJob1, completeJob1, editJob1, Task } from './types';
 
 export function setTodo(payload: string): setTodo1 {
     return {
@@ -30,6 +29,12 @@ export function setJobs(payload: Task[]): setJob1 {
 export function completeJob(payload: {id: string, complete: boolean} ): completeJob1 {
     return {
         type: 'COMPLETE_JOB',
+        payload
+    }        
+}
+export function editJob(payload: {id: string, title: string} ): editJob1 {
+    return {
+        type: 'EDIT_JOB',
         payload
     }        
 }

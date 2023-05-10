@@ -58,7 +58,19 @@ export function reducer(state: State, action: Action): State {
                 ...state,
                 jobs: updateJobs
             }
-
+        case 'EDIT_JOB':
+            const jobEditId = action.payload.id;
+            const title = action.payload.title;
+            const updateEditJobs = state.jobs.map(job => {
+                if(job.id === jobEditId) {
+                    return {...job, title: title}
+                }
+                return job
+            })
+            return {
+                ...state,
+                jobs: updateEditJobs,
+            }
         default: 
             throw new Error("invalid action")
     }

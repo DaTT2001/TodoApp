@@ -18,3 +18,6 @@ export async function deleteTask(id: string): Promise<void> {
 export async function completeTask(id: string, isCompleted: boolean, isActive: boolean):Promise<void> {
     await axios.patch(`${API_URL}/${id}`, {isCompleted, isActive});
 }
+export async function editTask(id: string, title: string):Promise<void> {
+    await axios.patch(`${API_URL}/${id}`, {title});
+}

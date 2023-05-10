@@ -39,10 +39,18 @@ export interface completeJob1 {
         complete: boolean,
     };
 }
+export interface editJob1 {
+    type: 'EDIT_JOB';
+    payload: {
+        id: string,
+        title: string,
+    };
+}
 export type Action = 
     | {type: 'SET', payload: string}
     | {type: 'UPDATE', payload: Task}
     | {type: 'DELETE', payload: number}
     | {type: 'SET_JOBS', payload: Task[]}
     | {type: 'COMPLETE_JOB', payload: {id: string, complete: boolean}}
+    | {type: 'EDIT_JOB', payload: {id: string, title: string}}
     ;

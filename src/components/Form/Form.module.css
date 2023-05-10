@@ -1,0 +1,48 @@
+.inputText {
+    width: 100%;
+    outline: none;
+    height: 30px;
+    border: 1px solid tomato;
+    padding: 0 10px;
+}
+.inputTime {
+    width: 100%;
+    outline: none;
+    height: 30px;
+    border: 1px solid tomato;
+    padding: 0 10px;
+}
+.toast {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+.modalContent {
+    border-radius: 20px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.modalClose {
+    font-weight: 700;
+    color: red;
+    cursor: pointer;
+}  

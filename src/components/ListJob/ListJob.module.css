@@ -1,0 +1,32 @@
+.listJob {
+    list-style: none;
+    border: 1px solid tomato;
+    margin-top: 10px;
+    width: 100%;
+    height: 400px; /* chiều cao tối đa của danh sách */
+    overflow-y: scroll;
+}
+.listJob-empty {
+    border: none;
+}
+
+.filter {
+    margin-top: 10px;
+}
+.filter button {
+    outline: none;
+    background-color: white;
+    border: 1px solid salmon;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.filter button:hover {
+    background-color: #ccc;
+}
+.filter button:nth-child(2) {
+    margin: 0 10px;
+}
+.strikeThrough {
+    text-decoration: line-through;
+}

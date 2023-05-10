@@ -1,0 +1,28 @@
+.taskItem {
+    display: flex;
+    padding: 5px 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemFunction {
+    gap: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete, .edit {
+    font-size: 12px;
+    cursor: pointer;
+}
+.edit {
+    color: green;
+}
+.delete {
+    color: red;
+}
+.delete:hover {
+    opacity: 0.6;
+}
+.taskComplete {
+    text-decoration: line-through;
+}

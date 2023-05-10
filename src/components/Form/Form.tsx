@@ -57,8 +57,7 @@ const Form = () => {
                 <button>Add</button>
               </form>
             </div>
-         
-        </div>
+          </div>
         )}  
         {/* Toast message */}
         {toastVisible && <Toast message='Công việc đã được thêm thành công!' />}

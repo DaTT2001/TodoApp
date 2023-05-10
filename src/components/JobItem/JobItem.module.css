@@ -26,3 +26,6 @@
 .taskComplete {
     text-decoration: line-through;
 }
+.taskTitle {
+    display: flex;
+}

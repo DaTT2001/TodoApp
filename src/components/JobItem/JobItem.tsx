@@ -4,6 +4,7 @@ import { useTodo } from '../../context/Provider';
 import {useState} from 'react'
 import { completeJob, deleteTodo } from '../../store/actions';
 import { deleteTask, completeTask } from '../../services/api';
+import EditJobItem from '../EditJobItem/EditJobItem';
 
 interface Props {
   job: Task;
@@ -21,12 +22,12 @@ const JobItem = ({ job, index }: Props) => {
 
   return (
     <li className={jobItem.taskItem} key={job.id}>
-      <div>
+      <div className={jobItem.taskTitle}>
         <input onChange={handleClickTask} checked={isCompleted} type="checkbox"/>
-        <p className={`${jobItem.taskTitle} ${isCompleted ? jobItem['taskComplete'] : '' }`}>{job.title}</p>
+        <p className={isCompleted ? jobItem['taskComplete'] : '' }>{job.title}</p>
       </div>
       <span className={jobItem.itemFunction}>
-        <p className={jobItem.edit}>Edit</p>
+        <div className={jobItem.edit}><EditJobItem job ={job}/></div>
         <p
           className={jobItem.delete}
           onClick={() => {

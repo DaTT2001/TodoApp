@@ -30,3 +30,6 @@
 .strikeThrough {
     text-decoration: line-through;
 }
+.active {
+    color: red;
+}

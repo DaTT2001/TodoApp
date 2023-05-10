@@ -7,7 +7,7 @@ const ListJob = () => {
     const {state} = useTodo();
     const {job, jobs} = state
     const [filter, setFilter] = useState('all');
-
+    const [activeFilter, setActiveFilter] = useState('all');
     const getFilteredJobs = () => {
         switch (filter) {
           case 'active':
@@ -21,6 +21,7 @@ const ListJob = () => {
      // Hàm để thay đổi filter
     const handleFilterChange = (newFilter: string) => {
         setFilter(newFilter);
+        setActiveFilter(newFilter);
     };
 
   return (
@@ -31,13 +32,13 @@ const ListJob = () => {
             })}             
         </ul>
         <div className={listJob.filter}>
-                <button onClick={() => handleFilterChange('all')}>
+                <button className={activeFilter === 'all' ? listJob.active : ''} onClick={() => handleFilterChange('all')}>
                 <p><span>{jobs.length}</span>All</p>
                 </button>
-                <button onClick={() => handleFilterChange('active')}>
+                <button className={activeFilter === 'active' ? listJob.active : ''} onClick={() => handleFilterChange('active')}>
                 <p><span>{jobs.filter(job => job.isActive).length}</span>Active</p>
                 </button>
-                <button onClick={() => handleFilterChange('completed')}>
+                <button className={activeFilter === 'completed' ? listJob.active : ''} onClick={() => handleFilterChange('completed')}>
                 <p><span>{jobs.filter(job => job.isCompleted).length}</span>Complete</p>
                 </button>
         </div>

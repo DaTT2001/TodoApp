@@ -1,30 +1,36 @@
-import jobItem from './JobItem.module.css'
-import { Task } from '../../store/types';
+import jobItem from './JobItem.module.css';
+import { Task } from '../../stores/types';
 import { useTodo } from '../../context/Provider';
-import {useState} from 'react'
-import { completeJob, deleteTodo } from '../../store/actions';
+import React, { useState } from 'react';
+import { completeJob, deleteTodo } from '../../stores/actions';
 import { deleteTask, completeTask } from '../../services/api';
 import EditJobItem from '../EditJobItem/EditJobItem';
+import Countdown from '../Countdown/Countdown';
 
 interface Props {
-  job: Task;
-  index: number;
+  job: Task
+  index: number
 }
 
-const JobItem = ({ job, index }: Props) => {
-  const { state, dispatch } = useTodo();
+const JobItem = ({ job, index }: Props): JSX.Element => {
+  const { dispatch } = useTodo();
   const [isCompleted, setIsCompleted] = useState<boolean>(job.isCompleted);
-  function handleClickTask() {
+  function handleClickTask (): void {
     setIsCompleted(!isCompleted);
-    dispatch(completeJob({id: job.id, complete: !isCompleted}));
-    completeTask(job.id, !isCompleted, isCompleted);
+    dispatch(completeJob({ id: job.id, complete: !isCompleted }));
+    void completeTask(job.id, !isCompleted, isCompleted);
   }
 
   return (
     <li className={jobItem.taskItem} key={job.id}>
       <div className={jobItem.taskTitle}>
-        <input onChange={handleClickTask} checked={isCompleted} type="checkbox"/>
-        <p className={isCompleted ? jobItem['taskComplete'] : '' }>{job.title}</p>
+        <div className={isCompleted ? jobItem.taskComplete : '' }>
+          <input onChange={handleClickTask} checked={isCompleted} type="checkbox"/>
+          <p>{job.title}</p>
+        </div>
+        <div className={isCompleted ? jobItem.taskComplete : '' }>
+          <Countdown timestamp = {job.timestamp} title = {job.title}/>
+        </div>
       </div>
       <span className={jobItem.itemFunction}>
         <div className={jobItem.edit}><EditJobItem job ={job}/></div>
@@ -32,7 +38,7 @@ const JobItem = ({ job, index }: Props) => {
           className={jobItem.delete}
           onClick={() => {
             dispatch(deleteTodo(index));
-            deleteTask(job.id);
+            void deleteTask(job.id);
           }}
         >
           Delete

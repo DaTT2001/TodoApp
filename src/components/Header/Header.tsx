@@ -1,10 +1,10 @@
-import React from 'react'
-import header from './Header.module.css'
+import React from 'react';
+import header from './Header.module.css';
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
-    <h5 className={header.header}>Todo App</h5>
-  )
-}
+    <h5 className={header.header}>What&apos;s the Plan for Today</h5>
+  );
+};
 
-export default Header
+export default Header;

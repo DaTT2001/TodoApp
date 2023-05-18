@@ -17,7 +17,13 @@ const updateListJobComplete = (jobs: Task[], jobId: string, isCompleted: boolean
     return job;
   });
 };
-
+const removeObjectByKeyId = (jobs: Task[], id: string): void => {
+  const index = jobs.findIndex(obj => obj.id === id);
+  console.log(index);
+  if (index !== -1) {
+    jobs.splice(index, 1);
+  }
+};
 const updateListJobTitle = (jobs: Task[], jobId: string, title: string, timestamp: number): Task[] => {
   return jobs.map(job => {
     if (job.id === jobId) {
@@ -46,7 +52,7 @@ export function reducer (state: State, action: Action): State {
     };
   case ActionType.delete:
     newJobs = [...state.jobs];
-    newJobs.splice(action.payload, 1);
+    removeObjectByKeyId(newJobs, action.payload);
     return {
       ...state,
       jobs: newJobs

@@ -46,7 +46,7 @@ export interface updateTodoInterface {
 }
 export interface deleteTodoInterface {
   type: ActionType.delete
-  payload: number
+  payload: string
 }
 export interface setJobsInterface {
   type: ActionType.setJobs

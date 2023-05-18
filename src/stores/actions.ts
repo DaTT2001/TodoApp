@@ -14,7 +14,7 @@ export function updateTodo (payload: Task): updateTodoInterface {
   };
 }
 
-export function deleteTodo (payload: number): deleteTodoInterface {
+export function deleteTodo (payload: string): deleteTodoInterface {
   return {
     type: ActionType.delete,
     payload

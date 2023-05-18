@@ -8,14 +8,10 @@ import { defaultTask, Task } from '../../../stores/types';
 import { v4 as uuidv4 } from 'uuid';
 
 const Form = (): JSX.Element => {
-  function generateId (): string {
-    const newId = uuidv4();
-    return newId;
-  }
   const [toastVisible, setToastVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [task, setTask] = useState<Task>({
-    id: generateId(),
+    id: '',
     title: '',
     timestamp: 0,
     isActive: true,
@@ -38,11 +34,15 @@ const Form = (): JSX.Element => {
     if (task.title.trim() === '' || task.timestamp === 0) {
       return;
     }
-    setTask(task);
-    console.log(task);
-    dispatch(setTodo(task));
-    dispatch(updateTodo(task));
-    void addTask(task);
+    const newTask = {
+      ...task,
+      id: uuidv4()
+    };
+    setTask(newTask);
+    console.log(newTask);
+    dispatch(setTodo(newTask));
+    dispatch(updateTodo(newTask));
+    void addTask(newTask);
     setToastVisible(true);
     setTask(defaultTask);
     setShowModal(false);

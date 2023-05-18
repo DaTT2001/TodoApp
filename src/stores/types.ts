@@ -5,7 +5,17 @@ export interface Task {
   isActive: boolean
   timestamp: number
 }
-export const initialTaskState: Task = {
+export enum ActionType {
+  set = 'SET',
+  update = 'UPDATE',
+  delete = 'DELETE',
+  setJobs = 'SET_JOBS',
+  complete = 'COMPLETE_JOB',
+  edit = 'EDIT_JOB',
+  filter = 'CHANGE_FILTER',
+  loading = 'LOADING'
+}
+export const defaultTask: Task = {
   id: '',
   title: '',
   isCompleted: false,
@@ -15,32 +25,42 @@ export const initialTaskState: Task = {
 export interface State {
   job: Task
   jobs: Task[]
+  filter: string
+  isLoading: boolean
+}
+export interface loadingInterface {
+  type: ActionType.loading
+  payload: boolean
+}
+export interface filterInterface {
+  type: ActionType.filter
+  payload: string
 }
 export interface setTodoInterface {
-  type: 'SET'
+  type: ActionType.set
   payload: Task
 }
 export interface updateTodoInterface {
-  type: 'UPDATE'
+  type: ActionType.update
   payload: Task
 }
 export interface deleteTodoInterface {
-  type: 'DELETE'
+  type: ActionType.delete
   payload: number
 }
-export interface setJobInterface {
-  type: 'SET_JOBS'
+export interface setJobsInterface {
+  type: ActionType.setJobs
   payload: Task[]
 }
 export interface completeJobInterface {
-  type: 'COMPLETE_JOB'
+  type: ActionType.complete
   payload: {
     id: string
     complete: boolean
   }
 }
 export interface editJobInterface {
-  type: 'EDIT_JOB'
+  type: ActionType.edit
   payload: {
     id: string
     title: string
@@ -48,10 +68,12 @@ export interface editJobInterface {
   }
 }
 export type Action =
-    | {type: 'SET', payload: Task}
-    | {type: 'UPDATE', payload: Task}
-    | {type: 'DELETE', payload: number}
-    | {type: 'SET_JOBS', payload: Task[]}
-    | {type: 'COMPLETE_JOB', payload: {id: string, complete: boolean}}
-    | {type: 'EDIT_JOB', payload: {id: string, title: string, timestamp: number}}
+    | setTodoInterface
+    | updateTodoInterface
+    | deleteTodoInterface
+    | setJobsInterface
+    | completeJobInterface
+    | editJobInterface
+    | filterInterface
+    | loadingInterface
     ;

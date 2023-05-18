@@ -1,49 +1,49 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
-    background-color: #374151;
+  background-color: #987eff;
 }
 :root {
-    --checkbox-size: 16px;
-    --checkbox-border-width: 2px;
-    --checkbox-border-color: #ccc;
-    --checkbox-background-color: #fff;
-    --checkbox-check-color: #2196f3;
-  }
-  
-  input[type="checkbox"] {
-    display: inline-block;
-    position: relative;
-    margin-right: 10px;
-    width: var(--checkbox-size);
-    height: var(--checkbox-size);
-    border: var(--checkbox-border-width) solid var(--checkbox-border-color);
-    border-radius: 2px;
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  
-  input[type="checkbox"]::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(var(--checkbox-size) / 2);
-    height: calc(var(--checkbox-size) / 2);
-    border-radius: 1px;
-    background-color: var(--checkbox-check-color);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  input[type="checkbox"]:checked::before {
-    opacity: 1;
-  }
+  --checkbox-size: 16px;
+  --checkbox-border-width: 2px;
+  --checkbox-border-color: #ccc;
+  --checkbox-background-color: #fff;
+  --checkbox-check-color: #2196f3;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  border: var(--checkbox-border-width) solid var(--checkbox-border-color);
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--checkbox-size) / 2);
+  height: calc(var(--checkbox-size) / 2);
+  border-radius: 1px;
+  background-color: var(--checkbox-check-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}

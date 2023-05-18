@@ -1,7 +1,19 @@
 import axios from 'axios';
 import { Task } from '../stores/types';
 
-const API_URL = 'https://new-api-sandy.vercel.app/todos';
+const API_URL = 'https://todoapi-3m8o.onrender.com/todos';
+
+axios.interceptors.response.use(
+  response => {
+    return response;
+  },
+  async error => {
+    if ((Boolean(error.response)) && error.response.status === 404) {
+      console.log('Không tìm thấy tài nguyên');
+    }
+    return await Promise.reject(error);
+  }
+);
 
 // get dữ liệu ban đầu
 export async function getTodos (): Promise<Task[]> {

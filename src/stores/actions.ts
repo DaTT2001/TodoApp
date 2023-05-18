@@ -1,40 +1,52 @@
-import { setTodoInterface, updateTodoInterface, deleteTodoInterface, setJobInterface, completeJobInterface, editJobInterface, Task } from './types';
+import { filterInterface, ActionType, setTodoInterface, updateTodoInterface, deleteTodoInterface, setJobsInterface, completeJobInterface, editJobInterface, Task, loadingInterface } from './types';
 
 export function setTodo (payload: Task): setTodoInterface {
   return {
-    type: 'SET',
+    type: ActionType.set,
     payload
   };
 }
 
 export function updateTodo (payload: Task): updateTodoInterface {
   return {
-    type: 'UPDATE',
+    type: ActionType.update,
     payload
   };
 }
 
 export function deleteTodo (payload: number): deleteTodoInterface {
   return {
-    type: 'DELETE',
+    type: ActionType.delete,
     payload
   };
 }
-export function setJobs (payload: Task[]): setJobInterface {
+export function setJobs (payload: Task[]): setJobsInterface {
   return {
-    type: 'SET_JOBS',
+    type: ActionType.setJobs,
     payload
   };
 }
 export function completeJob (payload: {id: string, complete: boolean}): completeJobInterface {
   return {
-    type: 'COMPLETE_JOB',
+    type: ActionType.complete,
     payload
   };
 }
 export function editJob (payload: {id: string, title: string, timestamp: number}): editJobInterface {
   return {
-    type: 'EDIT_JOB',
+    type: ActionType.edit,
+    payload
+  };
+}
+export function changeFilter (payload: string): filterInterface {
+  return {
+    type: ActionType.filter,
+    payload
+  };
+}
+export function setLoading (payload: boolean): loadingInterface {
+  return {
+    type: ActionType.loading,
     payload
   };
 }

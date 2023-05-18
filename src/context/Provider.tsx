@@ -2,7 +2,7 @@ import React, { useReducer, useContext, useEffect } from 'react';
 import { reducer, initalState } from '../stores/reducer';
 import { getTodos } from '../services/api';
 import { Context } from './Context';
-import { setJobs } from '../stores/actions';
+import { setJobs, setLoading } from '../stores/actions';
 import { Action, State } from '../stores/types';
 
 interface Props {
@@ -14,10 +14,13 @@ function Provider ({ children }: Props): JSX.Element {
   useEffect(() => {
     async function fetchData (): Promise<void> {
       try {
+        dispatch(setLoading(true));
+        await new Promise((resolve) => setTimeout(resolve, 500));
         const response = await getTodos();
         dispatch(setJobs(response));
+        dispatch(setLoading(false));
       } catch (error) {
-        console.error(error);
+        throw new Error('Không tìm thấy dữ liệu');
       }
     }
     void fetchData();

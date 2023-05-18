@@ -38,8 +38,11 @@ const JobItem = ({ job, index }: Props): JSX.Element => {
         <p
           className={jobItem.delete}
           onClick={() => {
-            dispatch(deleteTodo(index));
-            void deleteTask(job.id);
+            const confirmMessage = `Are you sure you want to delete the job ${job.title}?`;
+            if (window.confirm(confirmMessage)) {
+              dispatch(deleteTodo(index));
+              void deleteTask(job.id);
+            }
           }}
         >
           <i className="bi bi-trash-fill"></i>

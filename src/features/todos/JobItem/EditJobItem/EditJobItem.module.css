@@ -1,0 +1,94 @@
+.modal {
+    color: white;
+}
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+.modalContent {
+    border-radius: 20px;
+    margin: 15% auto;
+    width: 500px;
+}
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #987EFF;
+    border: 1px solid #987EFF;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+}   
+.modalClose {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+}  
+.modalClose:hover {
+    color: red;
+}
+.modal h2 {
+    color: black;
+    font-size: 20px;
+}
+.modalContent .form input {
+    width: 100%;
+    outline: none;
+    height: 50px;
+    background-color: #E5EEF5;
+    border: none;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+.modalContent .form button {
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.modalContent .form button:hover {
+    opacity: 0.6;
+}
+.formContent p {
+    font-weight: 600;
+    color: black;
+    font-size: 20px;
+}
+.form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    height: 100%;
+}
+.button {
+    display: flex;
+    justify-content: space-between;
+}
+.btnCancel {
+    background-color: red;
+    color: white;
+}
+.btnSubmit {
+    background-color: #28a745 ;
+    color: white;
+}

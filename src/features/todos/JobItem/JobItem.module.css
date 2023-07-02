@@ -1,0 +1,108 @@
+.taskItem {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 14px;
+	border-radius: 14px;
+    color: black;
+	margin-bottom: 20px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+.itemFunction {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.delete, .edit {
+    font-size: 20px;
+    cursor: pointer;
+}
+.delete {
+    color: red;
+}
+.edit {
+    color: green;
+}
+.edit:hover i, .delete:hover {
+    opacity: 0.6;
+}
+ 
+.taskComplete {
+    text-decoration: line-through;
+    color: #ccc;
+}
+.taskTitle {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+
+}
+.taskTitle > div {
+    display: flex;
+    align-items: center;
+}
+.taskTitle input {
+    outline: none;
+}
+  
+.modalContent {
+    border-radius: 20px;
+    margin: 15% auto;
+    width: 500px;
+}
+  
+.modalActions {
+    display: flex;
+    background-color: white;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    justify-content: space-between;
+}
+  
+.modalActions button {
+    color: white;
+    background-color: #ccc;
+    padding: 12px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 700;
+    width: 200px;
+    color: black;
+}
+.modalActions button:last-child {
+    color: white;
+    background-color: red;
+}
+.modalActions button:hover {
+    opacity: 0.6;
+}
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #987EFF;
+    border: 1px solid #987EFF;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
+}
+.modalClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: 600;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+}  
+.modalClose:hover {
+    color: red;
+}

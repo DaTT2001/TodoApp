@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './pages/Layout';
+import Layout from './layout/Layout';
 import app from './App.module.css';
 
 function App (): JSX.Element {

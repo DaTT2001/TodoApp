@@ -1,0 +1,29 @@
+.title span {
+    font-weight: 700;
+}
+.title {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+}
+.current {
+    color: green;
+}
+.prev {
+    color: red;
+}
+.closeBtn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #987EFF;
+    padding: 10px 0px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+.closeBtn:hover {
+    background-color: #3FD4F4;
+}
